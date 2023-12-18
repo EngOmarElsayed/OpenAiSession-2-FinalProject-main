@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2603A4C92B32E28800914982 /* SubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2603A4C82B32E28800914982 /* SubViews.swift */; };
-		262EA5EF2B334DD8008A4D56 /* FileManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EA5EE2B334DD8008A4D56 /* FileManger.swift */; };
 		26AE4FD72B209E6D006D35A3 /* DesignResourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE4FD62B209E6D006D35A3 /* DesignResourses.swift */; };
 		26AE4FDA2B20A157006D35A3 /* TextBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE4FD92B20A157006D35A3 /* TextBarView.swift */; };
 		26AE4FDC2B20ACDD006D35A3 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE4FDB2B20ACDD006D35A3 /* UserCellView.swift */; };
@@ -16,7 +14,6 @@
 		26C261142B271D9A00E6F086 /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C261132B271D9A00E6F086 /* StartingView.swift */; };
 		26C261162B271FBC00E6F086 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C261152B271FBC00E6F086 /* Modifiers.swift */; };
 		26D02DD62B20F7600074E62E /* AiCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D02DD52B20F7600074E62E /* AiCellView.swift */; };
-		26DA214D2B30F2D400AC5EF7 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA214C2B30F2D400AC5EF7 /* SideMenu.swift */; };
 		26FC42752B1F331E008FA8BD /* OpenAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FC42742B1F331E008FA8BD /* OpenAIApp.swift */; };
 		26FC42772B1F331E008FA8BD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FC42762B1F331E008FA8BD /* ListView.swift */; };
 		26FC42792B1F331F008FA8BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FC42782B1F331F008FA8BD /* Assets.xcassets */; };
@@ -30,8 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2603A4C82B32E28800914982 /* SubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViews.swift; sourceTree = "<group>"; };
-		262EA5EE2B334DD8008A4D56 /* FileManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManger.swift; sourceTree = "<group>"; };
 		26AE4FD62B209E6D006D35A3 /* DesignResourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignResourses.swift; sourceTree = "<group>"; };
 		26AE4FD92B20A157006D35A3 /* TextBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBarView.swift; sourceTree = "<group>"; };
 		26AE4FDB2B20ACDD006D35A3 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
@@ -39,7 +34,6 @@
 		26C261132B271D9A00E6F086 /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		26C261152B271FBC00E6F086 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		26D02DD52B20F7600074E62E /* AiCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiCellView.swift; sourceTree = "<group>"; };
-		26DA214C2B30F2D400AC5EF7 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		26FC42712B1F331E008FA8BD /* OpenAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FC42742B1F331E008FA8BD /* OpenAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIApp.swift; sourceTree = "<group>"; };
 		26FC42762B1F331E008FA8BD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -64,65 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2603A4C72B32E26D00914982 /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				26DA214C2B30F2D400AC5EF7 /* SideMenu.swift */,
-				2603A4C82B32E28800914982 /* SubViews.swift */,
-			);
-			name = SideMenu;
-			sourceTree = "<group>";
-		};
-		2603A4CA2B33007700914982 /* ChatView */ = {
-			isa = PBXGroup;
-			children = (
-				26FC42762B1F331E008FA8BD /* ListView.swift */,
-				2603A4CB2B33008400914982 /* SubViews */,
-			);
-			name = ChatView;
-			sourceTree = "<group>";
-		};
-		2603A4CB2B33008400914982 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				26D02DD52B20F7600074E62E /* AiCellView.swift */,
-				26AE4FDB2B20ACDD006D35A3 /* UserCellView.swift */,
-			);
-			name = SubViews;
-			sourceTree = "<group>";
-		};
-		2603A4CC2B3300B800914982 /* LoadingAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				26FC42962B1F7A86008FA8BD /* circuleAnimationView.swift */,
-			);
-			path = LoadingAnimation;
-			sourceTree = "<group>";
-		};
-		2603A4CD2B3300EE00914982 /* TextFieldView */ = {
-			isa = PBXGroup;
-			children = (
-				26AE4FD92B20A157006D35A3 /* TextBarView.swift */,
-			);
-			name = TextFieldView;
-			sourceTree = "<group>";
-		};
-		2603A4CE2B33012200914982 /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				26C261132B271D9A00E6F086 /* StartingView.swift */,
-			);
-			name = HomeView;
-			sourceTree = "<group>";
-		};
 		26AE4FD82B20A13F006D35A3 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				2603A4CE2B33012200914982 /* HomeView */,
-				2603A4CA2B33007700914982 /* ChatView */,
-				2603A4CD2B3300EE00914982 /* TextFieldView */,
-				2603A4CC2B3300B800914982 /* LoadingAnimation */,
-				2603A4C72B32E26D00914982 /* SideMenu */,
+				26C261132B271D9A00E6F086 /* StartingView.swift */,
+				26FC42762B1F331E008FA8BD /* ListView.swift */,
+				26AE4FD92B20A157006D35A3 /* TextBarView.swift */,
+				26D02DD52B20F7600074E62E /* AiCellView.swift */,
+				26AE4FDB2B20ACDD006D35A3 /* UserCellView.swift */,
+				26FC42962B1F7A86008FA8BD /* circuleAnimationView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -179,7 +123,6 @@
 		26FC42832B1F3333008FA8BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				262EA5EE2B334DD8008A4D56 /* FileManger.swift */,
 				26FC42912B1F38C0008FA8BD /* APiManger.swift */,
 				26FC42932B1F38C4008FA8BD /* DataModel */,
 			);
@@ -276,17 +219,14 @@
 				26AE4FDC2B20ACDD006D35A3 /* UserCellView.swift in Sources */,
 				26C261122B271D7100E6F086 /* MainView.swift in Sources */,
 				26AE4FD72B209E6D006D35A3 /* DesignResourses.swift in Sources */,
-				26DA214D2B30F2D400AC5EF7 /* SideMenu.swift in Sources */,
 				26AE4FDA2B20A157006D35A3 /* TextBarView.swift in Sources */,
 				26C261162B271FBC00E6F086 /* Modifiers.swift in Sources */,
 				26FC42902B1F35AA008FA8BD /* DeviceDataModel.swift in Sources */,
 				26D02DD62B20F7600074E62E /* AiCellView.swift in Sources */,
 				26FC42772B1F331E008FA8BD /* ListView.swift in Sources */,
-				2603A4C92B32E28800914982 /* SubViews.swift in Sources */,
 				26FC42922B1F38C0008FA8BD /* APiManger.swift in Sources */,
 				26FC428C2B1F33FA008FA8BD /* APIDataModel.swift in Sources */,
 				26FC42882B1F3398008FA8BD /* OpenAIViewModel.swift in Sources */,
-				262EA5EF2B334DD8008A4D56 /* FileManger.swift in Sources */,
 				26C261142B271D9A00E6F086 /* StartingView.swift in Sources */,
 				26FC42752B1F331E008FA8BD /* OpenAIApp.swift in Sources */,
 				26FC42952B1F4E7D008FA8BD /* Extensions.swift in Sources */,
@@ -427,12 +367,11 @@
 				DEVELOPMENT_TEAM = 9PYC9KWKRS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "OpenAi Made By Me";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,12 +380,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deveagency.OpenAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -461,12 +397,11 @@
 				DEVELOPMENT_TEAM = 9PYC9KWKRS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "OpenAi Made By Me";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,12 +410,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deveagency.OpenAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

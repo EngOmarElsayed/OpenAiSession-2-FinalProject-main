@@ -15,15 +15,6 @@ struct deviceMessage: Codable, Hashable, Identifiable {
     var id = UUID()
 }
 
-struct Conversion: Codable, Identifiable, Hashable {
-    var chat: [deviceMessage]
-    var id = UUID()
-    
-    var title: String {
-        chat[0].content.lowercased()
-    }
-}
-
 struct Role {
     static let assistant = "assistant"
     static let user = "user"

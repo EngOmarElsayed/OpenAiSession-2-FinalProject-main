@@ -9,9 +9,8 @@ import SwiftUI
 
 struct UserCellView: View {
     @EnvironmentObject var viewModel: OpenAIViewModel
-    @State var isCopyPresed = false
     var message: deviceMessage
-    var pastboard = UIPasteboard.general
+    
     var body: some View {
         VStack(alignment: .leading){
             HStack(alignment: .firstTextBaseline) {
@@ -25,20 +24,6 @@ struct UserCellView: View {
                     .fontDesign(.monospaced)
                     .multilineTextAlignment(.leading)
                     .padding(.vertical)
-            }
-            HStack {
-                Spacer()
-                Image(systemName: isCopyPresed ? "checkmark": "doc.on.doc")
-                    .padding()
-                    .onTapGesture {
-                        withAnimation(.default){
-                            isCopyPresed.toggle()
-                            pastboard.string = message.content
-                            DispatchQueue.main.asyncAfter(deadline:.now()+1.5) {
-                                isCopyPresed.toggle()
-                            }
-                        }
-                    }
             }
         }
         

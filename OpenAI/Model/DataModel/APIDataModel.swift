@@ -14,17 +14,17 @@ struct AiResponse: Codable {
 }
 
 struct Response: Codable {
-    let message: SentMessage
+    let message: Message
 }
 
 ////// data sent
 struct RequestData: Codable {
     var model: String
-    var messages: [SentMessage]
+    var messages: [Message]
     var temperature: Double = 0.2
 }
 
-struct SentMessage: Codable, Hashable {
+struct Message: Codable, Hashable {
     var role: String
     var content: String
 }

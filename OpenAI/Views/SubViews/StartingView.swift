@@ -13,7 +13,7 @@ struct StartingView: View {
     var body: some View {
         VStack {
             Spacer()
-            VStack(alignment: .center){
+            VStack {
                 Image(DesignResourses.logo)
                     .resizable()
                     .scaledToFit()

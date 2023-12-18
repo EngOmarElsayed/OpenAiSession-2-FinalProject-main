@@ -12,12 +12,9 @@ import Foundation
     @Published var response = ""
     @Published var welcomeText = ""
     @Published var isloading = false
-    @Published var selectedConversation: Conversion = Conversion(chat: [])
-    @Published var conversations: [Conversion] = []
-    @Published var isTypingAnimation = false
-
+    @Published var conversation: [deviceMessage] = []
     var lastIndex: Int {
-        selectedConversation.chat.count-1
+        conversation.count-1
     }
     
     let apiManger = APiManger.shared
@@ -29,56 +26,32 @@ extension OpenAIViewModel {
     }
     
     func startaNewConverstion() {
-        let index = conversations.firstIndex(where: {$0.id == selectedConversation.id})
-        if let index = index {
-            conversations[index] = selectedConversation
-        }
-        selectedConversation = Conversion(chat: [])
-    }
-    
-    func SwitchConversion(to con: Conversion) {
-        let index = conversations.firstIndex(where: {$0.id == selectedConversation.id})
-        if let index = index {
-            conversations[index] = selectedConversation
-        }
-        selectedConversation = con
-        response = con.chat[con.chat.endIndex-1].content
+        conversation.removeAll()
     }
     
 }
 
 extension OpenAIViewModel {
-    
     func sendMessage() async throws {
-        selectedConversation.chat.append(deviceMessage(role: Role.user, content: message))
-        selectedConversation.chat.append(deviceMessage(role: Role.assistant, content: ""))
-        if selectedConversation.chat.count <= 2 { conversations.append(selectedConversation) }
+        conversation.append(deviceMessage(role: Role.user, content: message))
+        conversation.append(deviceMessage(role: Role.assistant, content: ""))
         message = ""
         response = ""
         isloading = true
-        try await sendApiMessage()
-    }
-    
-   private func sendApiMessage() async throws {
+        
         do {
-            let response = try await request()
-            selectedConversation.chat[selectedConversation.chat.endIndex-1].content = response.choices[0].message.content
+            let response = try await apiManger.makeRequest(message: conversation)
+            conversation[conversation.endIndex-1].content = response.choices[0].message.content
             isloading = false
             TypoAnimation(for: response.choices[0].message.content, isWelcome: false)
-            
         }catch{
             print(error.localizedDescription)
             isloading = false
-            selectedConversation.chat[selectedConversation.chat.endIndex-1].content = "There is an error, please check your internat connection."
+            conversation[conversation.endIndex-1].content = "There is an error, please check your internat connection."
             TypoAnimation(for: "There is an error, please check your internat connection. ", isWelcome: false)
         }
         
     }
-    
-   private func request() async throws -> AiResponse {
-        try await apiManger.makeRequest(message: selectedConversation.chat)
-    }
-    
 }
 
 extension OpenAIViewModel {
@@ -87,8 +60,6 @@ extension OpenAIViewModel {
         var charindex = 0.0
         var typingSpeed = 0.02
         let loopOn = text+" "
-        
-        isTypingAnimation = true
         
         if isWelcome {
             welcomeText = ""
@@ -99,12 +70,9 @@ extension OpenAIViewModel {
         for letter in loopOn {
             Timer.scheduledTimer(withTimeInterval: typingSpeed*charindex, repeats: false) { timer in
                 _ = isWelcome ? self.welcomeText.append(letter): self.response.append(letter)
-                if loopOn.count == self.response.count {
-                    self.isTypingAnimation = false
-                }
             }
             charindex += 1
-        }   
+        }
     }
 }
 

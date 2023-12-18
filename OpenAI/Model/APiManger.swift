@@ -8,7 +8,7 @@
 import Foundation
 
 class APiManger {
-    let apiKey = "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" // your api key.
+    let apiKey = "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" // your api key.
     let urlString = "https://api.openai.com/v1/chat/completions" // api url
     static let shared = APiManger()
 }
@@ -34,7 +34,7 @@ extension APiManger {
 }
 
 extension APiManger {
-    private func ConfigureURLSession(for url: URL, message: [SentMessage]) -> URLRequest {
+    private func ConfigureURLSession(for url: URL, message: [Message]) -> URLRequest {
         var urlRequest = URLRequest(url: url)
         
         let usermessage = message
@@ -50,9 +50,9 @@ extension APiManger {
         return urlRequest
     }
     
-    private func ConvertThis(_ array: [deviceMessage]) -> [SentMessage] {
+    private func ConvertThis(_ array: [deviceMessage]) -> [Message] {
         var result = array.convertToMessage()
-        result.insert(SentMessage(role: Role.system, content: "You are a helpful assistant"), at: 0)
+        result.insert(Message(role: Role.system, content: "You are a helpful assistant"), at: 0)
         return result
     }
     
