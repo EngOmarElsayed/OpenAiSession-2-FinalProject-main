@@ -29,8 +29,10 @@ struct TextBarView: View {
                 .foregroundStyle(.colorThem)
                 .padding(.trailing)
                 .onTapGesture {
-                    if !viewModel.isloading && !viewModel.message.isEmpty {
+                    withAnimation(.default){
                         isfocus = false
+                    }
+                    if !viewModel.isloading && !viewModel.message.isEmpty {
                         Task {
                             try await viewModel.sendMessage()
                         }
@@ -42,6 +44,21 @@ struct TextBarView: View {
                 .stroke(lineWidth: 0.4)
                 .foregroundStyle(Color(DesignResourses.ColorThem))
         }
+        .padding()
+        .toolbar(content: {
+            ToolbarItem(placement: .keyboard) {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        withAnimation(.default){
+                            isfocus = false
+                        }
+                    }, label: {
+                        Text("Done")
+                    })
+                }
+            }
+        })
         
     }
 }

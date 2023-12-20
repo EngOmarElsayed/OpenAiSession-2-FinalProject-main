@@ -24,8 +24,8 @@ extension String: Error {
 }
 
 extension [deviceMessage] {
-    func convertToMessage() -> [Message] {
-        self.map({Message(role: $0.role, content: $0.content)})
+    func convertToMessage() -> [SentMessage] {
+        self.map({SentMessage(role: $0.role, content: $0.content)})
     }
 }
 

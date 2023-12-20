@@ -9,8 +9,10 @@ import SwiftUI
 
 struct AiCellView: View {
     @EnvironmentObject var viewModel: OpenAIViewModel
+    @State var isCopyPresed = false
     var message: deviceMessage
     var islast: Bool
+    var pastboard = UIPasteboard.general
     
     var body: some View {
         VStack(alignment: .leading){
@@ -20,7 +22,7 @@ struct AiCellView: View {
                     .fontDesign(.monospaced)
                     .padding(.vertical)
                 
-                Text(islast ? viewModel.response :message.content)
+                Text(islast && viewModel.isTypingAnimation ? viewModel.response :message.content)
                     .foregroundStyle(Color(DesignResourses.ColorThem))
                     .fontDesign(.monospaced)
                     .multilineTextAlignment(.leading)
@@ -31,6 +33,22 @@ struct AiCellView: View {
                         }
                     }
                 
+            }
+            if !viewModel.isTypingAnimation || !viewModel.isloading {
+                HStack {
+                    Spacer()
+                    Image(systemName: isCopyPresed ? "checkmark": "doc.on.doc")
+                        .padding()
+                        .onTapGesture {
+                            withAnimation(.default){
+                                isCopyPresed.toggle()
+                                pastboard.string = message.content
+                                DispatchQueue.main.asyncAfter(deadline:.now()+1.5) {
+                                    isCopyPresed.toggle()
+                                }
+                            }
+                        }
+                }
             }
         }
 

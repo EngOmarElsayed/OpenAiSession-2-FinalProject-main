@@ -15,8 +15,8 @@ struct ConversionView: View {
                 ScrollView {
                     ScrollViewReader { proxy in
                         VStack(alignment: .leading){
-                            ForEach(viewModel.conversation) { message in
-                                let isLast = message.id == viewModel.conversation[viewModel.lastIndex].id
+                            ForEach(viewModel.selectedConversation.chat) { message in
+                                let isLast = message.id == viewModel.selectedConversation.chat[viewModel.lastIndex].id
                                 
                                 if message.role == Role.assistant {
                                     AiCellView(message: message, islast:isLast)
@@ -27,16 +27,13 @@ struct ConversionView: View {
                             }
                         }
                         .id("view")
-                        .onReceive(viewModel.$conversation) { _ in
-                            proxy.scrollTo("view", anchor: .bottom)
-                        }
                         .onReceive(viewModel.$response) { _ in
                             proxy.scrollTo("view", anchor: .bottom)
                         }
                         
                     }
                 }
-            }
+        }.padding()
             
             .listStyle(.plain)
         
